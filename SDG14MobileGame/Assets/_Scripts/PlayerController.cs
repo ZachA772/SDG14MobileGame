@@ -108,8 +108,8 @@ public class PlayerController : MonoBehaviour
 
     private void RotatePlayer()
     {
-        float maxTilt = 15f; //Maximum tilt angle
-        float targetAngle = _verticalInput * maxTilt; //Calculate target angle
+        float maxTilt = -15f; //Maximum tilt angle
+        float targetAngle = _horizontalInput * maxTilt; //Calculate target angle
         _rb.rotation = Mathf.Lerp(_rb.rotation, targetAngle, 0.1f); //Smoothly rotate
     }
 

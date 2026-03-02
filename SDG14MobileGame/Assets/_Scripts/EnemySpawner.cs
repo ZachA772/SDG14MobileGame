@@ -57,13 +57,13 @@ public class EnemySpawner : MonoBehaviour
 
         //Spawn different enemies based on current level
         if (currentScene == "Level1")
-        {
-            InvokeRepeating(nameof(SpawnAsteroid), 1f, asteroidSpawnInterval);//Spawn asteroids 
+        { 
             InvokeRepeating(nameof(SpawnBlackHole), 0f, blackHoleSpawnInterval);//Spawn black holes
+            InvokeRepeating(nameof(SpawnCircleEnemy), 1f, circleEnemySpawnInterval);//Spawn circle enemies
         }
         else if (currentScene == "Level2")
         {
-            InvokeRepeating(nameof(SpawnCircleEnemy), 1f, circleEnemySpawnInterval);//Spawn circle enemies
+            InvokeRepeating(nameof(SpawnAsteroid), 1f, asteroidSpawnInterval);//Spawn asteroids
             InvokeRepeating(nameof(SpawnStrafeEnemy), 0f, strafeEnemySpawnInterval);//Spawn strafe enemies
             InvokeRepeating(nameof(SpawnAsteroid), 5f, asteroidSpawnInterval);//Spawn asteroids
         }

@@ -211,7 +211,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Destroy the enemies and reach for the stars!
+  m_text: Help clean up the ocean by destroying the harmful enemies!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 564b7b913d5496b47ae40f37195a6a3f, type: 2}
   m_sharedMaterial: {fileID: 2831540558655481933, guid: 564b7b913d5496b47ae40f37195a6a3f, type: 2}
@@ -350,7 +350,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 6.1875
+  orthographic size: 4.95
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -876,7 +876,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Space Bus!
+  m_text: H20(h) No!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 564b7b913d5496b47ae40f37195a6a3f, type: 2}
   m_sharedMaterial: {fileID: 2831540558655481933, guid: 564b7b913d5496b47ae40f37195a6a3f, type: 2}

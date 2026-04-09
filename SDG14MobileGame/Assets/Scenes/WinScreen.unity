@@ -1350,7 +1350,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You defeated The Creator and the universe is saved!
+  m_text: You cleaned the ocean and saved marine life!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 564b7b913d5496b47ae40f37195a6a3f, type: 2}
   m_sharedMaterial: {fileID: 2831540558655481933, guid: 564b7b913d5496b47ae40f37195a6a3f, type: 2}

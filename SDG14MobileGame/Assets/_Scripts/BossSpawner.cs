@@ -83,7 +83,7 @@ public class BossSpawner : MonoBehaviour
         {
             BossUI.SetActive(true);
             if (BossNameText != null)
-                BossNameText.text = "Hand of God";
+                BossNameText.text = "The Spiller";
         }
 
         //Get the BossHealth component to detect when the boss dies
@@ -137,7 +137,7 @@ public class BossSpawner : MonoBehaviour
         {
             BossUI.SetActive(true);
             if (BossNameText != null)
-                BossNameText.text = "Eye of The Maker";
+                BossNameText.text = "The Catcher";
         }
 
         //Listen for boss death event
@@ -191,7 +191,7 @@ public class BossSpawner : MonoBehaviour
         {
             BossUI.SetActive(true);
             if (BossNameText != null)
-                BossNameText.text = "The Creator";
+                BossNameText.text = "The Litterer";
         }
 
         //Listen for boss death event

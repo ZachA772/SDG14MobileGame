@@ -156,19 +156,19 @@ MonoBehaviour:
   blackHoleSpawnInterval: 4
   blackHoleSpeed: 3
   blackHoleSpawnPoint: {fileID: 5814535}
+  circleEnemyPrefab: {fileID: 4141680965245289289, guid: 914992079038acc4685b2e858cb50e84, type: 3}
+  circleEnemySpawnInterval: 2
+  circleEnemySpawnPoint: {fileID: 5814535}
   asteroidPrefab: {fileID: 6098084636171045436, guid: 80ad325a2bb36f044976432970af8b99, type: 3}
   asteroidSpawnInterval: 1
   asteroidSpeed: 4
   asteroidSpawnPoint: {fileID: 443801952}
-  shieldEnemyPrefab: {fileID: 234326951785210932, guid: 01e7cbc7e2ed95c4fbc393f4a91e5beb, type: 3}
-  shieldEnemySpawnInterval: 5
-  shieldEnemySpawnPoint: {fileID: 5814535}
-  circleEnemyPrefab: {fileID: 4141680965245289289, guid: 914992079038acc4685b2e858cb50e84, type: 3}
-  circleEnemySpawnInterval: 4
-  circleEnemySpawnPoint: {fileID: 5814535}
   strafeEnemyPrefab: {fileID: 8073008515295444804, guid: 27d4ecb34316e9144b9f4c021fb999b8, type: 3}
   strafeEnemySpawnInterval: 2
   strafeEnemySpawnPoint: {fileID: 5814535}
+  shieldEnemyPrefab: {fileID: 234326951785210932, guid: 01e7cbc7e2ed95c4fbc393f4a91e5beb, type: 3}
+  shieldEnemySpawnInterval: 5
+  shieldEnemySpawnPoint: {fileID: 5814535}
   splitEnemyPrefab: {fileID: 3641916022784283158, guid: 7172364046232b74f99d0bf9a144187e, type: 3}
   splitEnemySpawnInterval: 5
   splitEnemySpawnPoint: {fileID: 5814535}
@@ -4833,10 +4833,10 @@ MonoBehaviour:
   boss1KillsRequired: 20
   boss2Prefab: {fileID: 3744026360883968575, guid: 927bfa5d9fca0f84288760574abf8efd, type: 3}
   boss2SpawnPoint: {fileID: 1853775751}
-  boss2KillsRequired: 50
+  boss2KillsRequired: 40
   boss3Prefab: {fileID: 4138644021361163686, guid: cbd328e6e563cd14eab5ddf152adc7f3, type: 3}
   boss3SpawnPoint: {fileID: 1853775751}
-  boss3KillsRequired: 85
+  boss3KillsRequired: 60
   BossUI: {fileID: 841824033}
   BossNameText: {fileID: 1643846306}
   enemySpawner: {fileID: 5814534}

@@ -10,28 +10,27 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float blackHoleSpeed = 5f;//Movement speed of black hole
     [SerializeField] private Transform blackHoleSpawnPoint;//Spawn point transform
 
+    [Header("Circle Enemy Variables")]
+    [SerializeField] private GameObject circleEnemyPrefab;//Prefab for circle enemy
+    [SerializeField] private float circleEnemySpawnInterval = 5f;//Spawn interval
+    [SerializeField] private Transform circleEnemySpawnPoint;//Spawn point
+
     [Header("Asteroid Variable")]
     [SerializeField] private GameObject asteroidPrefab;//Prefab for asteroid enemy
     [SerializeField] private float asteroidSpawnInterval = 3f;//Time between spawns
     [SerializeField] private float asteroidSpeed = 4f;//Movement speed of asteroid
     [SerializeField] private Transform asteroidSpawnPoint;//Spawn point transform
 
+    [Header("Strafe Enemy Variables")]
+    [SerializeField] private GameObject strafeEnemyPrefab;//Prefab for strafe enemy
+    [SerializeField] private float strafeEnemySpawnInterval = 5f;//Spawn interval
+    [SerializeField] private Transform strafeEnemySpawnPoint;//Spawn point
 
     [Header("Shield Enemy Variables")]
     [SerializeField] private GameObject shieldEnemyPrefab;//Prefab for shield enemy
     [SerializeField] private float shieldEnemySpawnInterval = 5f;//Spawn interval
     [SerializeField] private Transform shieldEnemySpawnPoint;//Spawn point
-
-    [Header("Circle Enemy Variables")]
-    [SerializeField] private GameObject circleEnemyPrefab;//Prefab for circle enemy
-    [SerializeField] private float circleEnemySpawnInterval = 5f;//Spawn interval
-    [SerializeField] private Transform circleEnemySpawnPoint;//Spawn point
-    
-    [Header("Strafe Enemy Variables")]
-    [SerializeField] private GameObject strafeEnemyPrefab;//Prefab for strafe enemy
-    [SerializeField] private float strafeEnemySpawnInterval = 5f;//Spawn interval
-    [SerializeField] private Transform strafeEnemySpawnPoint;//Spawn point
-   
+       
     [Header("Split Enemy Variables")]
     [SerializeField] private GameObject splitEnemyPrefab;//Prefab for split enemy
     [SerializeField] private float splitEnemySpawnInterval = 5f;//Spawn interval
@@ -71,7 +70,6 @@ public class EnemySpawner : MonoBehaviour
         {
             InvokeRepeating(nameof(SpawnShieldEnemy), 1f, shieldEnemySpawnInterval);//Spawn shield enemies
             InvokeRepeating(nameof(SpawnSplitEnemy), 0f, splitEnemySpawnInterval);//Spawn split enemies
-            InvokeRepeating(nameof(SpawnBlackHole), 0f, blackHoleSpawnInterval);//Spawn black holes
         }
     }
 

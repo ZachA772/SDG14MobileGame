@@ -23,9 +23,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform shootPoint; //Empty object at player gun
     [SerializeField] private float projectileSpeed = 10f; //Speed of projectiles
 
-    [SerializeField] private Transform flame; //Flame object for visual effect
-    [SerializeField] private float minFlameX = 0.01f; //Minimum flame width
-    [SerializeField] private float maxFlameX = 0.2f; //Maximum flame width
 
     [SerializeField] private float reverseBlendSpeed = 5f; //Speed to interpolate reverse effect
     private float currentReverseMultiplier = 1f; //Current multiplier for movement
@@ -103,7 +100,6 @@ public class PlayerController : MonoBehaviour
         );
 
         RotatePlayer(); //Rotate player based on vertical input
-        UpdateFlameScale(); //Update flame visual size
     }
 
     private void RotatePlayer()
@@ -111,16 +107,6 @@ public class PlayerController : MonoBehaviour
         float maxTilt = -15f; //Maximum tilt angle
         float targetAngle = _horizontalInput * maxTilt; //Calculate target angle
         _rb.rotation = Mathf.Lerp(_rb.rotation, targetAngle, 0.1f); //Smoothly rotate
-    }
-
-    private void UpdateFlameScale()
-    {
-        if (flame == null) return;
-
-        float t = (_horizontalInput + 1f) / 2f; //Convert horizontal input from range -1..1 into 0..1
-        float targetX = Mathf.Lerp(minFlameX, maxFlameX, t); //Calculate target flame width
-        float currentY = flame.localScale.y; //Keep current Y scale
-        flame.localScale = Vector3.Lerp(flame.localScale, new Vector3(targetX, currentY, 1f), 0.1f); //Smoothly update scale
     }
 
     public void Shoot()

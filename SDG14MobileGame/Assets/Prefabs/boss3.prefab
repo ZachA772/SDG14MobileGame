@@ -307,7 +307,7 @@ MonoBehaviour:
   maxY: 2
   visionCirclePrefab: {fileID: 4024910316642193433, guid: b31eb8a1e7d125c44acd9ef8e1e7f2ea, type: 3}
   pupil: {fileID: 2948839259408613085}
-  boss2MinionPrefab: {fileID: 1537565959664259413, guid: 7fae8cd9818a75340907ec0f3a211865, type: 3}
+  boss2MinionPrefab: {fileID: 1537565959664259413, guid: 5dd1ad4f11bd29f41bc42419c8b7e1e9, type: 3}
   minionSpawnInterval: 3
 --- !u!1 &4138644021361163686
 GameObject:

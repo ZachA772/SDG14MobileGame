@@ -4423,9 +4423,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 4386541988258866386, guid: 32868092084d86d47a42bf6fb383acaa, type: 3}
   shootPoint: {fileID: 1640419528}
   projectileSpeed: 10
-  flame: {fileID: 0}
-  minFlameX: 0.05
-  maxFlameX: 0.2
   reverseBlendSpeed: 1
   destroyDelay: 0.5
   uiManager: {fileID: 1186055571}

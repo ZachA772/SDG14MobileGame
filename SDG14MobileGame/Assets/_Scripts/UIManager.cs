@@ -45,6 +45,12 @@ public class UIManager : MonoBehaviour
         SceneManager.LoadScene("Level1"); //Reload Level1
     }
 
+    //Loads Education Scene
+    public void EducationButton()
+    {
+        SceneManager.LoadScene("EducationScene"); //Reload Level1
+    }
+
     public void OnPlayerDeath()
     {
         YouDiedUI.SetActive(true); //Show "You Died" panel

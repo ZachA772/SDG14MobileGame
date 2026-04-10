@@ -4,22 +4,22 @@ using UnityEngine.SceneManagement;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [Header("Black Hole Variables")]
-    [SerializeField] private GameObject blackHolePrefab;//Prefab for black hole enemy
-    [SerializeField] private float blackHoleSpawnInterval = 5f;//Time between spawns
-    [SerializeField] private float blackHoleSpeed = 5f;//Movement speed of black hole
-    [SerializeField] private Transform blackHoleSpawnPoint;//Spawn point transform
+    [Header("Slow Enemy Variables")]
+    [SerializeField] private GameObject slowEnemyPrefab;//Prefab for slow enemy
+    [SerializeField] private float slowEnemySpawnInterval = 5f;//Time between spawns
+    [SerializeField] private float slowEnemySpeed = 5f;//Movement speed of slow enemy
+    [SerializeField] private Transform slowEnemySpawnPoint;//Spawn point transform
 
     [Header("Circle Enemy Variables")]
     [SerializeField] private GameObject circleEnemyPrefab;//Prefab for circle enemy
     [SerializeField] private float circleEnemySpawnInterval = 5f;//Spawn interval
     [SerializeField] private Transform circleEnemySpawnPoint;//Spawn point
 
-    [Header("Asteroid Variable")]
-    [SerializeField] private GameObject asteroidPrefab;//Prefab for asteroid enemy
-    [SerializeField] private float asteroidSpawnInterval = 3f;//Time between spawns
-    [SerializeField] private float asteroidSpeed = 4f;//Movement speed of asteroid
-    [SerializeField] private Transform asteroidSpawnPoint;//Spawn point transform
+    [Header("Net Enemy Variable")]
+    [SerializeField] private GameObject netEnemyPrefab;//Prefab for net enemy
+    [SerializeField] private float netEnemySpawnInterval = 3f;//Time between spawns
+    [SerializeField] private float netEnemySpeed = 4f;//Movement speed of net enemy
+    [SerializeField] private Transform netEnemySpawnPoint;//Spawn point transform
 
     [Header("Strafe Enemy Variables")]
     [SerializeField] private GameObject strafeEnemyPrefab;//Prefab for strafe enemy
@@ -57,14 +57,13 @@ public class EnemySpawner : MonoBehaviour
         //Spawn different enemies based on current level
         if (currentScene == "Level1")
         { 
-            InvokeRepeating(nameof(SpawnBlackHole), 0f, blackHoleSpawnInterval);//Spawn black holes
+            InvokeRepeating(nameof(SpawnSlowEnemy), 0f, slowEnemySpawnInterval);//Spawn slow enemies
             InvokeRepeating(nameof(SpawnCircleEnemy), 1f, circleEnemySpawnInterval);//Spawn circle enemies
         }
         else if (currentScene == "Level2")
         {
-            InvokeRepeating(nameof(SpawnAsteroid), 1f, asteroidSpawnInterval);//Spawn asteroids
+            InvokeRepeating(nameof(SpawnNetEnemy), 1f, netEnemySpawnInterval);//Spawn net enemies
             InvokeRepeating(nameof(SpawnStrafeEnemy), 0f, strafeEnemySpawnInterval);//Spawn strafe enemies
-            InvokeRepeating(nameof(SpawnAsteroid), 5f, asteroidSpawnInterval);//Spawn asteroids
         }
         else if (currentScene == "Level3")
         {
@@ -73,40 +72,40 @@ public class EnemySpawner : MonoBehaviour
         }
     }
 
-    private void SpawnBlackHole()
+    private void SpawnSlowEnemy()
     {
-        if (blackHolePrefab == null) return;//Return if prefab missing
+        if (slowEnemyPrefab == null) return;//Return if prefab missing
 
-        Vector3 spawnPos = blackHoleSpawnPoint != null ? blackHoleSpawnPoint.position : transform.position;//Get spawn position
+        Vector3 spawnPos = slowEnemySpawnPoint != null ? slowEnemySpawnPoint.position : transform.position;//Get spawn position
         spawnPos.y = Random.Range(MinYSpawn.position.y, MaxYSpawn.position.y);//Randomize Y
 
-        GameObject blackHole = Instantiate(blackHolePrefab, spawnPos, Quaternion.identity);//Spawn black hole
+        GameObject slowEnemy = Instantiate(slowEnemyPrefab, spawnPos, Quaternion.identity);//Spawn slow enemy
 
-        Rigidbody2D rb = blackHole.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = slowEnemy.GetComponent<Rigidbody2D>();
         if (rb == null)
-            rb = blackHole.AddComponent<Rigidbody2D>();//Add Rigidbody if missing
+            rb = slowEnemy.AddComponent<Rigidbody2D>();//Add Rigidbody if missing
 
         rb.gravityScale = 0;//No gravity
-        rb.velocity = Vector2.left * blackHoleSpeed;//Move left
+        rb.velocity = Vector2.left * slowEnemySpeed;//Move left
     }
 
-    private void SpawnAsteroid()
+    private void SpawnNetEnemy()
     {
-        if (asteroidPrefab == null) return;//Return if prefab missing
+        if (netEnemyPrefab == null) return;//Return if prefab missing
 
         float randomX = Random.Range(MaxYLeftSpawn.position.x, MaxYSpawn.position.x);//Random X
-        Vector3 spawnPos = new Vector3(randomX, asteroidSpawnPoint.position.y, 0f);//Spawn above screen
+        Vector3 spawnPos = new Vector3(randomX, netEnemySpawnPoint.position.y, 0f);//Spawn above screen
 
-        GameObject asteroid = Instantiate(asteroidPrefab, spawnPos, Quaternion.identity);
+        GameObject netEnemy = Instantiate(netEnemyPrefab, spawnPos, Quaternion.identity);
 
-        Rigidbody2D rb = asteroid.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = netEnemy.GetComponent<Rigidbody2D>();
         if (rb == null)
-            rb = asteroid.AddComponent<Rigidbody2D>();
+            rb = netEnemy.AddComponent<Rigidbody2D>();
 
         rb.gravityScale = 0;
 
         Vector2 downLeft = new Vector2(-1f, -1f).normalized;//Direction diagonally down-left
-        rb.velocity = downLeft * asteroidSpeed;
+        rb.velocity = downLeft * netEnemySpeed;
     }
 
     private void SpawnShieldEnemy()

@@ -1,12 +1,12 @@
 using UnityEngine;
-public class BlackHole : MonoBehaviour
+public class SlowEnemy : MonoBehaviour
 {
     [Header("References")]
 
     //Transform that represents the outer range where the pull effect begins
     [SerializeField] private Transform pullRange;
 
-    //Transform that represents the center of the black hole
+    //Transform that represents the center of the slow enemy
     [SerializeField] private Transform deathCircle;
 
     [Header("Pull Settings")]
@@ -35,7 +35,7 @@ public class BlackHole : MonoBehaviour
         //Stop if player is not in range or player reference is missing
         if (!playerInRange || player == null) return;
 
-        //Calculate the current distance between the player and the black hole center
+        //Calculate the current distance between the player and the slow enemy center
         float distance = Vector2.Distance(
             player.position,
             deathCircle.position
@@ -55,15 +55,15 @@ public class BlackHole : MonoBehaviour
         //This makes the pull feel stronger closer to the center.
         float pullStrength = Mathf.Lerp(minPullStrength, maxPullStrength, normalized * normalized);
 
-        //Calculate the direction from the player to the black hole center
+        //Calculate the direction from the player to the slow enemy center
         Vector2 direction = (deathCircle.position - player.position).normalized;
 
-        //Move the player toward the black hole center
+        //Move the player toward the slow enemy center
         //Time.deltaTime ensures smooth movement independent of framerate
         player.position += (Vector3)(direction * pullStrength * Time.deltaTime);
     }
 
-    //Called when the player enters the black hole's trigger range
+    //Called when the player enters the slow enemy's trigger range
     private void OnTriggerEnter2D(Collider2D other)
     {
         //Check if the object entering is the player
@@ -74,7 +74,7 @@ public class BlackHole : MonoBehaviour
         }
     }
 
-    //Called when the player exits the black hole's trigger range
+    //Called when the player exits the slow enemy's trigger range
     private void OnTriggerExit2D(Collider2D other)
     {
         //Check if the object exiting is the player

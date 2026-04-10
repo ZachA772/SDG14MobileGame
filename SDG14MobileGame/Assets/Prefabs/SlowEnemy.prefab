@@ -163,7 +163,7 @@ GameObject:
   - component: {fileID: 2229869624391847940}
   - component: {fileID: 8874472398967044605}
   m_Layer: 0
-  m_Name: blackHole
+  m_Name: SlowEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

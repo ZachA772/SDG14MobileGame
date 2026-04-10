@@ -152,17 +152,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb7e195d40f80e469f4169ba3ca151c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  blackHolePrefab: {fileID: 5117412150447730654, guid: 252db680dde07f849a2cb57b173b03e8, type: 3}
-  blackHoleSpawnInterval: 4
-  blackHoleSpeed: 3
-  blackHoleSpawnPoint: {fileID: 5814535}
+  slowEnemyPrefab: {fileID: 5117412150447730654, guid: 252db680dde07f849a2cb57b173b03e8, type: 3}
+  slowEnemySpawnInterval: 5
+  slowEnemySpeed: 5
+  slowEnemySpawnPoint: {fileID: 5814535}
   circleEnemyPrefab: {fileID: 4141680965245289289, guid: 914992079038acc4685b2e858cb50e84, type: 3}
   circleEnemySpawnInterval: 2
   circleEnemySpawnPoint: {fileID: 5814535}
-  asteroidPrefab: {fileID: 6098084636171045436, guid: 80ad325a2bb36f044976432970af8b99, type: 3}
-  asteroidSpawnInterval: 1
-  asteroidSpeed: 4
-  asteroidSpawnPoint: {fileID: 443801952}
+  netEnemyPrefab: {fileID: 6098084636171045436, guid: 80ad325a2bb36f044976432970af8b99, type: 3}
+  netEnemySpawnInterval: 3
+  netEnemySpeed: 4
+  netEnemySpawnPoint: {fileID: 5814535}
   strafeEnemyPrefab: {fileID: 8073008515295444804, guid: 27d4ecb34316e9144b9f4c021fb999b8, type: 3}
   strafeEnemySpawnInterval: 2
   strafeEnemySpawnPoint: {fileID: 5814535}
@@ -1057,7 +1057,7 @@ GameObject:
   - component: {fileID: 443801952}
   - component: {fileID: 443801951}
   m_Layer: 0
-  m_Name: AsteroidSpawn
+  m_Name: NetEnemySpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

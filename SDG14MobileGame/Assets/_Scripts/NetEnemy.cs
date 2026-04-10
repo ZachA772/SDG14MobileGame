@@ -1,7 +1,7 @@
 using UnityEngine;
 
 
-public class Asteroid : MonoBehaviour
+public class NetEnemy : MonoBehaviour
 {
     //Reference to the Animator component for playing animations
     private Animator animator;
@@ -9,20 +9,20 @@ public class Asteroid : MonoBehaviour
     //Reference to the Rigidbody2D component for physics control
     private Rigidbody2D rb;
 
-    //Flag to prevent the asteroid from being destroyed multiple times
+    //Flag to prevent the net enemy from being destroyed multiple times
     private bool isDestroyed = false;
 
     //Reference to the Collider2D component to enable/disable collision
     private Collider2D col;
 
-    //Delay before destroying the asteroid GameObject.
+    //Delay before destroying the net enemy GameObject.
     //Allows time for the explosion animation and sound to finish.
     [SerializeField] private float destroyDelay = 0.6f;
 
-    //Audio settings for the asteroid destruction sound
+    //Audio settings for the net enemy destruction sound
     [Header("Audio")]
     [SerializeField] private AudioSource audioSource; //AudioSource used to play sounds
-    [SerializeField] private AudioClip deathSound;    //Sound played when asteroid is destroyed
+    [SerializeField] private AudioClip deathSound;    //Sound played when net enemy is destroyed
 
     //Retrieves and stores references to required components.
     private void Awake()
@@ -34,20 +34,20 @@ public class Asteroid : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        //If the asteroid has already been destroyed, do nothing.
+        //If the net enemy has already been destroyed, do nothing.
         if (isDestroyed) return;
 
         //Check if the object that collided is a player bullet
         if (other.CompareTag("Bullet"))
         {
-            //Mark asteroid as destroyed to prevent duplicate triggers
+            //Mark net enemy as destroyed to prevent duplicate triggers
             isDestroyed = true;
 
             //Disable collision immediately so it cannot harm the player during its death animation
             if (col != null)
                 col.enabled = false;
 
-            //Stop asteroid movement
+            //Stop net enemy movement
             if (rb != null)
                 rb.velocity = Vector2.zero;
 
@@ -58,14 +58,14 @@ public class Asteroid : MonoBehaviour
             if (audioSource != null && deathSound != null)
                 audioSource.PlayOneShot(deathSound);
 
-            //Destroy the bullet that hit the asteroid
+            //Destroy the bullet that hit the net enemy
             Destroy(other.gameObject);
 
             //Notify the GameManager that an enemy has been destroyed,
             //Updates the score and kill counter
             GameManager.Instance.AddKill();
 
-            //Destroy the asteroid after a short delay to allow animation and sound to complete
+            //Destroy the net enemy after a short delay to allow animation and sound to complete
             Destroy(gameObject, destroyDelay);
         }
     }

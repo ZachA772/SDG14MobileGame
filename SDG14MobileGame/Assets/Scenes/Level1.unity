@@ -162,7 +162,7 @@ MonoBehaviour:
   netEnemyPrefab: {fileID: 6098084636171045436, guid: 80ad325a2bb36f044976432970af8b99, type: 3}
   netEnemySpawnInterval: 3
   netEnemySpeed: 4
-  netEnemySpawnPoint: {fileID: 5814535}
+  netEnemySpawnPoint: {fileID: 443801952}
   strafeEnemyPrefab: {fileID: 8073008515295444804, guid: 27d4ecb34316e9144b9f4c021fb999b8, type: 3}
   strafeEnemySpawnInterval: 2
   strafeEnemySpawnPoint: {fileID: 5814535}

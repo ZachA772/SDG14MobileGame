@@ -216,7 +216,7 @@ public class BossSpawner : MonoBehaviour
                 if (levelCompleteText != null)
                 {
                     TMP_Text TextLevelComplete = levelCompleteText.GetComponent<TMP_Text>();
-                    TextLevelComplete.text = "The Creator is Defeated";
+                    TextLevelComplete.text = "Level 3 Complete";
                     levelCompleteText.SetActive(true);
                 }
 

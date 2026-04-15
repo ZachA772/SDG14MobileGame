@@ -44,6 +44,7 @@ Unity 2022.3.60f1
 3. Video_Tutorial - Contains video tutorial of game
 4. Presentation - Contains powerpoint presentation
 5. Design Document.docx - Design document for game
+6. SDG14 Poster.png - PNG of SDG14 poster submission
 ## Author
 
 Developed by: Zach Ahearn  

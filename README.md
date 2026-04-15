@@ -40,9 +40,9 @@ Unity 2022.3.60f1
 
 ## Folder Explanations
 1. APK - Contains the APK file
-2. SDG14MobileGame - Full Unity Project
-3. Video_Tutorial - Contains video tutorial of game
-4. Presentation - Contains powerpoint presentation
+2. SDG14MobileGame - Full Unity Project (scripts can be found in Assests/Scripts/)
+3. Game_Videos - Contains video tutorial and code discussion
+4. Presentation - Contains powerpoint presentation and pre-recorded video
 5. Design Document.docx - Design document for game
 6. SDG14 Poster.png - PNG of SDG14 poster submission
 ## Author
